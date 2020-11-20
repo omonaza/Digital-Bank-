@@ -1,0 +1,154 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "Login",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 21178500000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User navigates to Digital Bank login page",
+            "match": {
+              "location": "DigitalBankAccountSteps.user_navigates_to_Digital_Bank_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11478000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Verify that web title is \"Digital Bank\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Digital Bank",
+                  "offset": 26
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_web_title_is(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17948906600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User logs in with following credentials",
+            "match": {
+              "location": "DigitalBankAccountSteps.user_logs_in_with_following_credentials(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "username",
+                  "password"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "JohnDoe@testemail.com",
+                  "Password1"
+                ],
+                "line": 10
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 16713300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify that web title is \"Digital Bank\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Digital Bank",
+                  "offset": 26
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_web_title_is(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 13,
+        "name": "As a user, I want to be able to view all details in my account home page",
+        "description": "",
+        "id": "home-page;as-a-user,-i-want-to-be-able-to-view-all-details-in-my-account-home-page",
+        "after": [
+          {
+            "result": {
+              "duration": 276185400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 70984000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Verify that \"Welcome John\" text is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Welcome John",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_text_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4175575200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Verify that panel with account information is displayed",
+            "match": {
+              "location": "DigitalBankAccountSteps.verify_that_panel_with_account_information_is_displayed()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 12,
+            "name": "@logsIn"
+          }
+        ]
+      }
+    ],
+    "name": "home page",
+    "description": "\r\ndescription",
+    "id": "home-page",
+    "keyword": "Feature",
+    "uri": "features/DigitalBankAccount.feature"
+  }
+]
