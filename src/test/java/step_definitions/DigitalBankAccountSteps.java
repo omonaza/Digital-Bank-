@@ -4,6 +4,8 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -19,19 +21,38 @@ public class DigitalBankAccountSteps {
     WebDriver driver = Driver.getDriver();
     private final String LOGIN_PAGE_URL = "http://dbankdemo.com/login";
     private final String HOME_PAGE_URL = "http://dbankdemo.com/home";
+    private String title;
+    private static final Logger LOG = LogManager.getLogger(DigitalBankAccountSteps.class.getName());
 
 
     @Given("^User navigates to Digital Bank login page$")
     public void user_navigates_to_Digital_Bank_login_page() throws Throwable {
+        LOG.debug("Use url {}", LOGIN_PAGE_URL);
         driver.get(LOGIN_PAGE_URL);
-        Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(LOGIN_PAGE_URL);
+        LOG.info("Login page is opened!");
 
+        try {
+            LOG.debug("Assert that actual url is as expected");
+            Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(LOGIN_PAGE_URL);
+            LOG.info("Assertion for URL is passed.");
+        } catch (Exception e) {
+            LOG.error("error is here");
+            throw e;
+
+        }
+
+        String title = driver.getTitle();
+        if(title.equals("Home Page")){
+            LOG.error("");
+        }
     }
 
     //  \"([^\"]*)\" .*
     @Given("^Verify that web title is \"([^\"]*)\".*$")
     public void verify_that_web_title_is(String title) throws Throwable {
         Assertions.assertThat(driver.getTitle()).isEqualTo(title);
+        this.title = title;
+        LOG.info("Title - {} - is correct.", title);
     }
 
     @When("^User logs in with following credentials$")
@@ -158,46 +179,58 @@ public class DigitalBankAccountSteps {
 
     @Then("^User clicks on Checking button$")
     public void user_clicks_on_Checking_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+       driver.findElement(By.xpath("//*[@id='main-menu']/ul/li[2]/a")).click();
 
     }
 
     @Then("^User clicks on New Checking button$")
     public void user_clicks_on_New_Checking_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+      driver.findElement(By.xpath("//a[text()='New Checking']")).click();
 
     }
 
     @Then("^Verify that \"([^\"]*)\" header is displayed$")
-    public void verify_that_header_is_displayed(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-
+    public void verify_that_header_is_displayed(String newCheckingAccount) throws Throwable {
+      WebElement actualNewCheckAccount= driver.findElement(By.xpath("//strong[text()='"+newCheckingAccount+"']"));
+       Assert.assertTrue(actualNewCheckAccount.isDisplayed());
     }
 
     @Then("^Verify that \"([^\"]*)\" label is displayed$")
-    public void verify_that_label_is_displayed(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void verify_that_label_is_displayed(String selectNewCheckingAccount) throws Throwable {
+     WebElement actualSelectNewCheckAccount = driver.findElement(By.xpath("//strong[text()='"+selectNewCheckingAccount+"']"));
+     Assert.assertTrue(actualSelectNewCheckAccount.isDisplayed());
 
     }
 
     @Then("^Verify that radio buttons are unchecked with following text$")
-    public void verify_that_radio_buttons_are_unchecked_with_following_text(DataTable arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-        // E,K,V must be a scalar (String, Integer, Date, enum etc)
-        ;
+    public void verify_that_radio_buttons_are_unchecked_with_following_text(DataTable dataTAble) throws Throwable {
+          List<String> checkButtonsText= dataTAble.asList(String.class);
+          for(String str: checkButtonsText){
+             Assert.assertTrue( driver.findElement(By.id(str)).isDisplayed());
+          }
+
+        List<WebElement> radioBtnList = driver.findElements(By.xpath("//input[@type='radio']"));
+        for (WebElement el : radioBtnList) {
+            Assert.assertFalse("Failed: Radio buttons are selected", el.isSelected());
+        }
     }
 
     @Then("^Verify that input field accepts alphanumeric and special characters$")
     public void verify_that_input_field_accepts_alphanumeric_and_special_characters() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+      WebElement inputField = driver.findElement(By.id("name"));
+        String value = "Abcd123@#$";
+        inputField.sendKeys(value);
+      String value1 = inputField.getText();
+
+     // Assert.assertTrue(inputField.getAttribute(value1).contains(value));
+        System.out.println(value1);
+        System.out.println(value);
 
     }
 
     @Then("^Verify that input field accepts accepts numeric whole or decimal values$")
     public void verify_that_input_field_accepts_accepts_numeric_whole_or_decimal_values() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+
 
     }
 

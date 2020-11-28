@@ -9,7 +9,7 @@ Feature: home page
       | username              | password  |
       | JohnDoe@testemail.com | Password1 |
     Then Verify that web title is "Digital Bank"
-  @logsIn
+
   Scenario: As a user, I want to be able to view all details in my account home page
 
     And Verify that "Welcome John" text is displayed
@@ -37,7 +37,7 @@ Feature: home page
     And User clicks on "Checking" button
     And Verify that under "Checking" we have options
       | View Checking | New Checking |
-
+  @logsIn
   Scenario: Checking account page validations
 
     And User clicks on Checking button

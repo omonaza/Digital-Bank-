@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 21178500000,
+              "duration": 32744043500,
               "status": "passed"
             },
             "line": 6,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 11478000,
+              "duration": 28786100,
               "status": "passed"
             },
             "line": 7,
@@ -41,7 +41,7 @@
           },
           {
             "result": {
-              "duration": 17948906600,
+              "duration": 12973444300,
               "status": "passed"
             },
             "line": 8,
@@ -69,7 +69,7 @@
           },
           {
             "result": {
-              "duration": 16713300,
+              "duration": 22759000,
               "status": "passed"
             },
             "line": 11,
@@ -88,14 +88,14 @@
         ]
       },
       {
-        "line": 13,
-        "name": "As a user, I want to be able to view all details in my account home page",
+        "line": 41,
+        "name": "Checking account page validations",
         "description": "",
-        "id": "home-page;as-a-user,-i-want-to-be-able-to-view-all-details-in-my-account-home-page",
+        "id": "home-page;checking-account-page-validations",
         "after": [
           {
             "result": {
-              "duration": 276185400,
+              "duration": 799249600,
               "status": "passed"
             },
             "match": {
@@ -108,15 +108,166 @@
         "steps": [
           {
             "result": {
-              "duration": 70984000,
+              "duration": 184463200,
               "status": "passed"
             },
-            "line": 15,
-            "name": "Verify that \"Welcome John\" text is displayed",
+            "line": 43,
+            "name": "User clicks on Checking button",
+            "match": {
+              "location": "DigitalBankAccountSteps.user_clicks_on_Checking_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6832384600,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "User clicks on New Checking button",
+            "match": {
+              "location": "DigitalBankAccountSteps.user_clicks_on_New_Checking_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 233632400,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Verify that \"New Checking Account\" header is displayed",
             "match": {
               "arguments": [
                 {
-                  "val": "Welcome John",
+                  "val": "New Checking Account",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_header_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 128708100,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Verify that \"Select Checking Account Type\" label is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Select Checking Account Type",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 408109700,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "Verify that radio buttons are unchecked with following text",
+            "match": {
+              "location": "DigitalBankAccountSteps.verify_that_radio_buttons_are_unchecked_with_following_text(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Standard Checking",
+                  "Interest Checking"
+                ],
+                "line": 48
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 102717800,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "Verify that \"Select Account Ownership\" label is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Select Account Ownership",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 223208400,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Verify that radio buttons are unchecked with following text",
+            "match": {
+              "location": "DigitalBankAccountSteps.verify_that_radio_buttons_are_unchecked_with_following_text(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Individual",
+                  "Joint"
+                ],
+                "line": 51
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70116100,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "Verify that \"Account Name\" label is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Account Name",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 425480500,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Verify that input field accepts alphanumeric and special characters",
+            "match": {
+              "location": "DigitalBankAccountSteps.verify_that_input_field_accepts_alphanumeric_and_special_characters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 222039000,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c\"[Initial Deposit Amount]\"\u003e but was:\u003c\"[Welcome John]\"\u003e\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat step_definitions.DigitalBankAccountSteps.verify_that_text_is_displayed(DigitalBankAccountSteps.java:51)\r\n\tat ✽.And Verify that \"Initial Deposit Amount\" text is displayed(features/DigitalBankAccount.feature:54)\r\n",
+              "status": "failed"
+            },
+            "line": 54,
+            "name": "Verify that \"Initial Deposit Amount\" text is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Initial Deposit Amount",
                   "offset": 13
                 }
               ],
@@ -126,20 +277,70 @@
           },
           {
             "result": {
-              "duration": 4175575200,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 16,
-            "name": "Verify that panel with account information is displayed",
+            "line": 55,
+            "name": "Verify that input field accepts accepts numeric whole or decimal values",
             "match": {
-              "location": "DigitalBankAccountSteps.verify_that_panel_with_account_information_is_displayed()"
+              "location": "DigitalBankAccountSteps.verify_that_input_field_accepts_accepts_numeric_whole_or_decimal_values()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 56,
+            "name": "Verify that \"ex. Minimum opening deposit is $25.00\" text is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ex. Minimum opening deposit is $25.00",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_text_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 57,
+            "name": "Verify that \"Submit\" button is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Submit",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_button_is_displayed(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 58,
+            "name": "Verify that \"Reset\" button is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Reset",
+                  "offset": 13
+                }
+              ],
+              "location": "DigitalBankAccountSteps.verify_that_button_is_displayed(String)"
             },
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "line": 12,
+            "line": 40,
             "name": "@logsIn"
           }
         ]

@@ -1,0 +1,15 @@
+11:19:58.181 [main] TRACE step_definitions.Hooks - Enter Enter the Application
+11:20:07.406 [main] DEBUG step_definitions.DigitalBankAccountSteps - Use url http://dbankdemo.com/login
+11:20:51.788 [main] TRACE step_definitions.Hooks - Exit with(Exit the Application)
+11:21:31.980 [main] INFO  step_definitions.Test - It is our first log
+11:21:31.995 [main] ERROR step_definitions.Test - I got error from such file
+11:21:31.995 [main] DEBUG step_definitions.Test - I enter login website.
+11:21:31.995 [main] TRACE step_definitions.Test - This is main class
+11:21:31.995 [main] FATAL step_definitions.Test - This is fatal message.
+11:21:31.995 [main] WARN  step_definitions.Test - Be careful.
+11:21:31.995 [main] INFO  step_definitions.Test - This is my title Home Page
+11:21:31.995 [main] INFO  step_definitions.Test - This is my title Home Page
+11:21:31.995 [main] ERROR step_definitions.Test - This is my 5 title Home Page
+11:21:42.200 [main] ERROR Pages.DigitalBankLoginPage - Gives error on divide1 to 0
+11:22:48.100 [main] ERROR step_definitions.TestTwo - I got error from such file
+11:22:48.100 [main] FATAL step_definitions.TestTwo - This is fatal message.
