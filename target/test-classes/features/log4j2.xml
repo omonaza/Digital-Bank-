@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This xml file needs for log4j2 library-->
+<!--log4j2 library will look for this file when you start the program-->
+<!--        This file we need for all configurations-->
+<Configuration status="WARN">
+
+    <!--    In Properties we write path to our project and to our folder-->
+    <!--    name="basePath" - is our project path-->
+    <!--    ./logs - is location of log folder-->
+    <Properties>
+
+        <Property name="basePath">./logs</Property>
+
+    </Properties>
+
+    <!--    In Appenders we declare where we want to see our loggers information-->
+    <Appenders>
+
+        <!--    if you want to see your logs on console-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--write here design you want to see when it is printing-->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        </Console>
+
+        <!--here we define appender for file, where we write in name- general name for Rolling file-->
+        <!--        in fileName - we write path and file name-->
+        <!--        filePattern - we write patter we want that next file will be created-->
+        <RollingFile name="File" fileName="${basePath}/test.log"
+                     filePattern="${basePath}/test-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+
+        </RollingFile>
+
+        <RollingFile name="FileTwo" fileName="${basePath}/TestTwo.log"
+                     filePattern="${basePath}/testTwo-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+
+        </RollingFile>
+
+
+    </Appenders>
+
+    <!--here we define log level-->
+    <Loggers>
+
+        <!--        level of the root will apply to all classes in the application-->
+        <Root level="trace">
+            <!--you tell log4j where you want to see your logs-->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+
+        </Root>
+
+        <!--we can give custom level for any class we want,
+        just need to add path to the class and what level-->
+        <!--        name="packageName + . + class name"-->
+        <!--        optional-->
+        <Logger name="step_definitions.TestTwo" level="error">
+            <!--you tell log4j where you want to see your logs-->
+            <AppenderRef ref="FileTwo"/>
+        </Logger>
+
+
+    </Loggers>
+
+
+</Configuration>

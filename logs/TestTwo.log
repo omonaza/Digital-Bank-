@@ -1,0 +1,2 @@
+11:22:48.100 [main] ERROR step_definitions.TestTwo - I got error from such file
+11:22:48.100 [main] FATAL step_definitions.TestTwo - This is fatal message.
