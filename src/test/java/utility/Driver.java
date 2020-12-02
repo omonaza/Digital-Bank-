@@ -15,33 +15,31 @@ public class Driver {
      */
     private static WebDriver driver;
     static String browser = "chrome";
-
-
     private Driver() { //private constractor means Singleton Design Pattern
     }
-
     public static WebDriver getDriver() {
         if (driver == null) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            switch (browser) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+            }
         }
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }
-
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
-
     public static void closeDriver() {
         if (driver != null) {
             driver.close();
             driver = null;
         }
-
     }
 }

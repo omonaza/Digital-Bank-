@@ -3,99 +3,25 @@
     "line": 1,
     "elements": [
       {
-        "line": 5,
-        "name": "Login",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
+        "before": [
           {
             "result": {
-              "duration": 32744043500,
+              "duration": 2185927300,
               "status": "passed"
             },
-            "line": 6,
-            "name": "User navigates to Digital Bank login page",
             "match": {
-              "location": "DigitalBankAccountSteps.user_navigates_to_Digital_Bank_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 28786100,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "Verify that web title is \"Digital Bank\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Digital Bank",
-                  "offset": 26
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_web_title_is(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12973444300,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "User logs in with following credentials",
-            "match": {
-              "location": "DigitalBankAccountSteps.user_logs_in_with_following_credentials(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "username",
-                  "password"
-                ],
-                "line": 9
-              },
-              {
-                "cells": [
-                  "JohnDoe@testemail.com",
-                  "Password1"
-                ],
-                "line": 10
-              }
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 22759000,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Verify that web title is \"Digital Bank\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Digital Bank",
-                  "offset": 26
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_web_title_is(String)"
-            },
-            "keyword": "Then "
+              "location": "Hooks.start()"
+            }
           }
-        ]
-      },
-      {
-        "line": 41,
-        "name": "Checking account page validations",
+        ],
+        "line": 4,
+        "name": "Etsy search verification",
         "description": "",
-        "id": "home-page;checking-account-page-validations",
+        "id": "etsy-search;etsy-search-verification",
         "after": [
           {
             "result": {
-              "duration": 799249600,
+              "duration": 1423588100,
               "status": "passed"
             },
             "match": {
@@ -108,248 +34,84 @@
         "steps": [
           {
             "result": {
-              "duration": 184463200,
+              "duration": 16892307500,
               "status": "passed"
             },
-            "line": 43,
-            "name": "User clicks on Checking button",
+            "line": 5,
+            "name": "got to etsy.com",
             "match": {
-              "location": "DigitalBankAccountSteps.user_clicks_on_Checking_button()"
+              "location": "etsySearchSteps.got_to_etsy_com()"
             },
-            "keyword": "And "
+            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 6832384600,
+              "duration": 171177900,
               "status": "passed"
             },
-            "line": 44,
-            "name": "User clicks on New Checking button",
-            "match": {
-              "location": "DigitalBankAccountSteps.user_clicks_on_New_Checking_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 233632400,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "Verify that \"New Checking Account\" header is displayed",
+            "line": 6,
+            "name": "Enter any search term \"Book\"",
             "match": {
               "arguments": [
                 {
-                  "val": "New Checking Account",
-                  "offset": 13
+                  "val": "Book",
+                  "offset": 23
                 }
               ],
-              "location": "DigitalBankAccountSteps.verify_that_header_is_displayed(String)"
+              "location": "etsySearchSteps.enterAnySearchTerm(String)"
             },
-            "keyword": "And "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 128708100,
+              "duration": 1309708300,
               "status": "passed"
             },
-            "line": 46,
-            "name": "Verify that \"Select Checking Account Type\" label is displayed",
+            "line": 7,
+            "name": "click on search button",
             "match": {
-              "arguments": [
-                {
-                  "val": "Select Checking Account Type",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
+              "location": "etsySearchSteps.clickOnSearchButton()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 408109700,
+              "duration": 2797794900,
               "status": "passed"
             },
-            "line": 47,
-            "name": "Verify that radio buttons are unchecked with following text",
+            "line": 8,
+            "name": "click on allFilters button",
             "match": {
-              "location": "DigitalBankAccountSteps.verify_that_radio_buttons_are_unchecked_with_following_text(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Standard Checking",
-                  "Interest Checking"
-                ],
-                "line": 48
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 102717800,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "Verify that \"Select Account Ownership\" label is displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Select Account Ownership",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
+              "location": "etsySearchSteps.clickOnAllFiltersButton()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 223208400,
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "Verify that radio buttons are unchecked with following text",
-            "match": {
-              "location": "DigitalBankAccountSteps.verify_that_radio_buttons_are_unchecked_with_following_text(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Individual",
-                  "Joint"
-                ],
-                "line": 51
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 70116100,
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "Verify that \"Account Name\" label is displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Account Name",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_label_is_displayed(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 425480500,
-              "status": "passed"
-            },
-            "line": 53,
-            "name": "Verify that input field accepts alphanumeric and special characters",
-            "match": {
-              "location": "DigitalBankAccountSteps.verify_that_input_field_accepts_alphanumeric_and_special_characters()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 222039000,
-              "error_message": "org.junit.ComparisonFailure: expected:\u003c\"[Initial Deposit Amount]\"\u003e but was:\u003c\"[Welcome John]\"\u003e\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat step_definitions.DigitalBankAccountSteps.verify_that_text_is_displayed(DigitalBankAccountSteps.java:51)\r\n\tat ✽.And Verify that \"Initial Deposit Amount\" text is displayed(features/DigitalBankAccount.feature:54)\r\n",
+              "duration": 4668614300,
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat step_definitions.Etsy.etsySearchSteps.verifyShopLocationAnywhereIsChecked(etsySearchSteps.java:50)\r\n\tat ✽.Then verify shop location anywhere is checked(features/Etsy/etsySearch.feature:9)\r\n",
               "status": "failed"
             },
-            "line": 54,
-            "name": "Verify that \"Initial Deposit Amount\" text is displayed",
+            "line": 9,
+            "name": "verify shop location anywhere is checked",
             "match": {
-              "arguments": [
-                {
-                  "val": "Initial Deposit Amount",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_text_is_displayed(String)"
+              "location": "etsySearchSteps.verifyShopLocationAnywhereIsChecked()"
             },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 55,
-            "name": "Verify that input field accepts accepts numeric whole or decimal values",
-            "match": {
-              "location": "DigitalBankAccountSteps.verify_that_input_field_accepts_accepts_numeric_whole_or_decimal_values()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 56,
-            "name": "Verify that \"ex. Minimum opening deposit is $25.00\" text is displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "ex. Minimum opening deposit is $25.00",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_text_is_displayed(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 57,
-            "name": "Verify that \"Submit\" button is displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Submit",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_button_is_displayed(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 58,
-            "name": "Verify that \"Reset\" button is displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Reset",
-                  "offset": 13
-                }
-              ],
-              "location": "DigitalBankAccountSteps.verify_that_button_is_displayed(String)"
-            },
-            "keyword": "And "
+            "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 40,
-            "name": "@logsIn"
+            "line": 3,
+            "name": "@search"
           }
         ]
       }
     ],
-    "name": "home page",
-    "description": "\r\ndescription",
-    "id": "home-page",
+    "name": "Etsy Search",
+    "description": "",
+    "id": "etsy-search",
     "keyword": "Feature",
-    "uri": "features/DigitalBankAccount.feature"
+    "uri": "features/Etsy/etsySearch.feature"
   }
 ]

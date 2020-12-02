@@ -1,4 +1,4 @@
-package step_definitions;
+package step_definitions.digitalBank;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -220,7 +220,7 @@ public class DigitalBankAccountSteps {
       WebElement inputField = driver.findElement(By.id("name"));
         String value = "Abcd123@#$";
         inputField.sendKeys(value);
-      String value1 = inputField.getText();
+      String value1 = inputField.getAttribute("value");
 
      // Assert.assertTrue(inputField.getAttribute(value1).contains(value));
         System.out.println(value1);

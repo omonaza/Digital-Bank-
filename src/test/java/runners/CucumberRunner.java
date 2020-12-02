@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
       //  plugin = {"json:target/cucumber.json","pretty","html:target/reports"},
         plugin = {"json:target/cucumber.json"},
         dryRun = false,
-       tags = {"@logsIn"}
+       tags = {"@search"}
 
 
 )
