@@ -1,4 +1,4 @@
-package step_definitions;
+package step_definitions.digitalBank;
 
 
 import com.github.javafaker.Faker;

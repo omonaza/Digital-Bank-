@@ -1,5 +1,3 @@
 step_definitions\Hooks.class
-runners\CucumberRunner.class
 utility\Driver.class
-step_definitions\DigitalBankAccountSteps.class
-step_definitions\DigitalBankRegistrationSteps.class
+runners\CucumberRunner.class

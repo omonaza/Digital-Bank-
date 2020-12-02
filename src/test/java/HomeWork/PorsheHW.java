@@ -138,7 +138,8 @@ public class PorsheHW {
 
        WebElement wheelSport = driver.findElement(By.xpath("//li[@id='s_exterieur_x_MXRD']//span[@class='wheel-option img-wrapper']"));
        wait.until(ExpectedConditions.elementToBeClickable(wheelSport));
-       wheelSport.click();
+       js.executeScript("arguments[0].click();",wheelSport);
+
 
         //price for Carrera Sport Wheels
         Integer carreraSportWheelsPrice = Integer.parseInt(driver.findElement(By.xpath("//li[@id='s_exterieur_x_MXRD']")).getAttribute("data-price").substring(1).replace(",", ""));
@@ -146,7 +147,20 @@ public class PorsheHW {
         Thread.sleep(3000);
 
         // assertion of wheels and color
-        Assert.assertFalse(miamiBluePriceInt==carreraSportWheelsPrice);
+        Assert.assertFalse(miamiBluePriceInt+ carreraSportWheelsPrice==intEquPrice);
+        int result = miamiBluePriceInt+carreraSportWheelsPrice;
+        int equip = intEquPrice;
+        System.out.println("result--->" +result +"equipment--->" +intEquPrice);
+
+        Thread.sleep(4000);
+
+        //assertion of total price with wheels
+        Assert.assertTrue("total price failure with wheels----> ",basePrise1+intEquPrice+intDeliveryPrice==intTotalPrice);
+
+
+
+
+
 
 
     }
